@@ -1,0 +1,255 @@
+.reviews {
+  overflow: hidden;
+  color: $main-text-color;
+}
+
+.reviews__wrapper {
+  display: grid;
+  grid-template-areas:
+    "heading buttons"
+    "slider  slider";
+  padding: 56px 15px 50px;
+  width: 320px;
+  overflow: visible;
+  gap: 34px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-areas:
+      "heading    heading"
+      "slider     slider"
+      "navigation buttons";
+    padding: 50px 45px 53px;
+    gap: 40px;
+    width: 768px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 44px;
+    padding: 66px 100px 60px;
+    width: 1440px;
+  }
+}
+
+.reviews__wrapper .reviews-slide {
+  color: $main-text-color;
+  min-height: 472px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 290px;
+  border: 2px solid #316dc2;
+  border-radius: 16px;
+
+  @media (min-width: $tablet-width) {
+    width: 560px;
+    min-height: 417px;
+    align-items: flex-start;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 604px;
+  }
+}
+
+.reviews__header {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  color: $extra-text-color;
+  grid-area: heading;
+
+  @media (min-width: $tablet-width) {
+    font-size: 34px;
+    line-height: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0 0 0 3px;
+  }
+}
+
+.reviews__swiper {
+  position: relative;
+  grid-area: slider;
+  width: 290px;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 674px;
+    overflow: visible;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1240px;
+    overflow: hidden;
+  }
+}
+
+.reviews__wrapper .reviews__scrollbar {
+  display: none;
+  margin: 10px 0 0;
+  height: 2px;
+  background: rgba(49, 109, 194, 0.2);
+  width: 562px;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    grid-area: navigation;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1136px;
+    margin: 6px 0 0;
+  }
+}
+
+.reviews__wrapper .swiper-scrollbar-drag {
+  background: #316dc2;
+  border-radius: 2px;
+}
+
+.reviews .reviews-swiper-container__buttons {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  gap: 4px;
+  top: 82px;
+  right: 49px;
+  justify-content: flex-end;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 4px;
+    justify-content: space-between;
+  }
+}
+
+.reviews .reviews-swiper-container__button {
+  width: 37px;
+  height: 20px;
+  left: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviews .reviews-swiper-container__button--next {
+  width: 28px;
+  height: 41px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    z-index: 10;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    right: 5px;
+    translate: (0 -50%);
+  }
+
+  &::after {
+    content: "";
+    width: 13px;
+    height: 9px;
+    mask-image: url("/__spritemap#sprite-pagination-arrow-icon-view");
+    background-color: $background-accent;
+    background-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    z-index: 10;
+    position: absolute;
+  }
+}
+
+.reviews .reviews-swiper-container__button--prev {
+  width: 28px;
+  height: 41px;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    z-index: 10;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    translate: (0 -50%);
+  }
+
+  &::after {
+    content: "";
+    width: 13px;
+    height: 9px;
+    transform: rotate(180deg);
+    mask-image: url("/__spritemap#sprite-pagination-arrow-icon-view");
+    background-color: $background-accent;
+    background-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    z-index: 10;
+    position: absolute;
+  }
+}
+
+.reviews .reviews-swiper-container__button:hover {
+  &::before {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  &::after {
+    background-color: $background-accent;
+    opacity: 0.7;
+  }
+}
+
+.reviews .reviews-swiper-container__button:focus {
+  &::before {
+    background-color: $background-extra;
+    border: none;
+    outline: none;
+  }
+
+  &::after {
+    background-color: $background-accent;
+  }
+}
+
+.reviews .reviews-swiper-container__button:active {
+  &::before {
+    background-color: $background-extra;
+    border: none;
+    outline: none;
+  }
+
+  &::after {
+    background-color: $background-accent;
+    opacity: 0.7;
+  }
+}
+
+.reviews .swiper-button-prev.swiper-button-disabled,
+.reviews .swiper-button-next.swiper-button-disabled {
+  &::before {
+    opacity: 1;
+  }
+
+  &::after {
+    background-color: $disabled;
+    opacity: 1;
+  }
+}

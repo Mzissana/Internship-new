@@ -1,0 +1,104 @@
+.grant-requirements {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 0 0;
+
+  @media (min-width: $tablet-width) {
+    gap: 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 55px;
+  }
+}
+
+.grant-requirements__header {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 36px;
+    max-width: 373px;
+  }
+}
+
+
+.grant-requirements__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px 28px;
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: column;
+    font-size: 16px;
+    line-height: 26px;
+    gap: 23px 28px;
+  }
+}
+
+.grant-requirements__item {
+  padding: 24px 25px;
+  margin: 0 0 0 15px;
+  background-color: $background-accent;
+  border: 1px solid #ffffff;
+  border-radius: 16px;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    width: 305px;
+    padding: 30px 25px;
+    margin: 0 0 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 478px;
+  }
+}
+
+
+.grant-requirements__item::before {
+  content: attr(data-number);
+  position: absolute;
+  top: -6px;
+  left: -16px;
+  width: 32px;
+  height: 32px;
+  background-color: $background-accent;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 22px;
+    letter-spacing: 0.22px;
+    top: -15px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+  }
+}

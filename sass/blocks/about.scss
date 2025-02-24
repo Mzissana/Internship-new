@@ -1,0 +1,35 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $background-main;
+  color: $main-text-color;
+}
+
+.about__wrapper {
+  padding: 50px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 320px;
+
+  @media (min-width: $tablet-width) {
+    width: 768px;
+    padding: 50px 45px;
+    gap: 39px 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1440px;
+    padding: 70px 100px 60px;
+    display: grid;
+    grid-template-areas:
+      "heading  goal"
+      "features features";
+  }
+}
+
+
+.about .about-features {
+  grid-area: features;
+}

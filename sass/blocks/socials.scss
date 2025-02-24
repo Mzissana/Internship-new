@@ -1,0 +1,138 @@
+.socials__list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  @media (min-width: $desktop-width) {
+    gap: 20px;
+  }
+}
+
+.socials__item {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+.socials__link {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $icon-main;
+  border-radius: 50%;
+
+  @media (min-width: $tablet-width) {
+    width: 36px;
+    height: 36px;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.7;
+    }
+  }
+
+  &:focus {
+    background-color: $icon-additional;
+
+    &::before {
+      background-color: $icon-main;
+    }
+  }
+
+  &:active {
+    background-color: $button-clicked;
+
+    &::before {
+      background-color: $icon-additional;
+      opacity: 1;
+    }
+  }
+}
+
+.socials__icon--vkontakte {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: (-50% -50%);
+    width: 13px;
+    height: 8px;
+    background-repeat: no-repeat;
+    background-size: 13px 8px;
+    background-color: $icon-additional;
+    mask-image: url("../../img/sprite/vk-icon.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    @media (min-width: $tablet-width) {
+      width: 16px;
+      height: 11px;
+    }
+  }
+}
+
+.socials__icon--ok {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: (-50% -50%);
+    width: 8px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: 8px 12px;
+    background-color: $icon-additional;
+    mask-image: url("../../img/sprite/ok-icon.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    @media (min-width: $tablet-width) {
+      width: 11px;
+      height: 15px;
+    }
+  }
+}
+
+.socials__icon--reddit {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: (-50% -50%);
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-size: 12px 12px;
+    background-color: $icon-additional;
+    mask-image: url("../../img/sprite/reddit-icon.svg");
+    mask-repeat: no-repeat;
+    mask-size: contain;
+
+    @media (min-width: $tablet-width) {
+      width: 17px;
+      height: 16px;
+    }
+  }
+}

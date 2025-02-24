@@ -1,0 +1,9 @@
+$content-font: "Manrope", arial, sans-serif;
+
+@include font-face("Manrope", url("../../fonts/Manrope-ExtraLight.woff2") format("woff2"), 200);
+@include font-face("Manrope", url("../../fonts/Manrope-Light.woff2") format("woff2"), 300);
+@include font-face("Manrope", url("../../fonts/Manrope-Regular.woff2") format("woff2"), 400);
+@include font-face("Manrope", url("../../fonts/Manrope-Medium.woff2") format("woff2"), 500);
+@include font-face("Manrope", url("../../fonts/Manrope-SemiBold.woff2") format("woff2"), 600);
+@include font-face("Manrope", url("../../fonts/Manrope-Bold.woff2") format("woff2"), 700);
+@include font-face("Manrope", url("../../fonts/Manrope-ExtraBold.woff2") format("woff2"), 800);

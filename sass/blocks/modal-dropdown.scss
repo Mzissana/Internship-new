@@ -1,0 +1,93 @@
+.modal-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.modal-dropdown__button {
+  width: 100%;
+  padding: 0;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: $main-text-color;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 52px;
+}
+
+.modal-dropdown__button::after {
+  content: "";
+  margin-left: auto;
+  height: 10px;
+  width: 20px;
+  background-color: $background-extra;
+  mask-image: url("/__spritemap#sprite-dropdown-icon-view");
+  mask-size: 20px 10px;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  rotate: 0;
+  transition: 0.3s ease;
+}
+
+.modal-dropdown__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: $background-extra;
+  outline: 1px solid $background-extra;
+  border: none;
+  border-radius: 8px;
+  display: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.modal-dropdown--open .modal-dropdown__list {
+  display: block;
+  margin-top: 5px;
+  color: $main-text-color;
+}
+
+.modal-dropdown__item:first-child {
+  display: none;
+}
+
+.modal-dropdown__item {
+  padding: 17px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-height: 48px;
+
+  &:hover {
+    color: $extra-text-color;
+  }
+
+  &:active {
+    background-color: $background-accent;
+    color: $on-dark-text-color;
+  }
+
+  &:focus {
+    background-color: $background-accent;
+    color: $on-dark-text-color;
+  }
+}
+
+.modal-dropdown--open .modal-dropdown__button {
+  &::after {
+    transform: rotate(-180deg);
+    transition: 0.3s ease;
+  }
+}

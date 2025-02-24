@@ -1,0 +1,307 @@
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.faq-accordion__list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+
+  @media (min-width: $desktop-width) {
+    grid-area: accordion;
+  }
+}
+
+
+.faq-accordion__item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 2px solid $background-accent;
+  border-radius: 14px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    border-radius: 16px;
+  }
+}
+
+.faq-accordion__item button {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: left;
+  padding: 22px 60px 22px 15px;
+  margin: 0;
+  position: relative;
+  width: 100%;
+  color: inherit;
+  border-radius: 14px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-color: $background-accent;
+    background-position: 5px 5px;
+    right: 15px;
+    top: 50%;
+    translate: 0 -50%;
+
+    @media (min-width: $tablet-width) {
+      right: 30px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 40px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    mask-image: url("/__spritemap#sprite-plus-icon-view");
+    mask-size: 18px 18px;
+    background-size: 40px 40px;
+    mask-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-color: $background-extra;
+    mask-position: 11px 10px;
+    right: 15px;
+    top: 50%;
+    translate: (0 -50%);
+
+    @media (min-width: $tablet-width) {
+      right: 30px;
+    }
+
+    @media (min-width: $desktop-width) {
+      right: 40px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 22px;
+    line-height: 26px;
+    padding: 37px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 28px;
+    line-height: 34px;
+    padding: 43px 40px;
+  }
+
+  &:hover {
+    background-color: $background-extra;
+
+    &::before {
+      background-color: transparent;
+      outline: 1px solid $background-accent;
+      outline-offset: -1px;
+    }
+
+    &::after {
+      background-color: $background-accent;
+    }
+  }
+
+  &:focus {
+    background-color: $background-extra;
+
+    &::before {
+      background-color: transparent;
+      outline: 1px solid $background-accent;
+      outline-offset: -1px;
+    }
+
+    &::after {
+      background-color: $background-accent;
+    }
+  }
+}
+
+.faq-accordion button {
+  background-color: transparent;
+  border: none;
+}
+
+.faq-accordion__item button br {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.faq-accordion__item:nth-child(4) button {
+  padding: 20px 50px 20px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px 75px 30px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 40px 85px 40px 40px;
+  }
+}
+
+.faq-accordion__item:nth-child(5) button {
+  padding: 20px 60px 20px 15px;
+
+  @media (min-width: $tablet-width) {
+    padding: 30px 75px 30px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 40px;
+  }
+}
+
+.faq-accordion__item div:nth-child(2) {
+  display: none;
+}
+
+.faq-accordion__item--show div:nth-child(2) {
+  display: block;
+}
+
+.faq-accordion__item--show button {
+  background-color: $background-accent;
+  color: $on-dark-text-color;
+  border-radius: 12px 12px 0 0;
+  gap: 19px;
+  padding: 22px 60px 22px 15px;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    padding: 37px 30px 27px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 43px 40px 18px;
+  }
+
+  &::before {
+    background-color: $background-extra;
+  }
+
+  &::after {
+    mask-image: url("/__spritemap#sprite-minus-icon-view");
+    mask-size: 18px 2px;
+    mask-position: 11px 19px;
+    background-color: $background-accent;
+  }
+}
+
+.faq-accordion__item--show div {
+  background-color: $background-accent;
+  color: $on-dark-text-color;
+  padding: 0 15px 20px;
+  border-radius: 0 0 12px 12px;
+
+
+  @media (min-width: $tablet-width) {
+    padding: 0 30px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 5px 40px 40px;
+  }
+
+  &:last-of-type {
+    font-size: 14px;
+    line-height: 20px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    @media (min-width: $desktop-width) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+}
+
+.faq-accordion__item--show:hover > button,
+.faq-accordion__item--show:focus > button {
+  &::before {
+    background-color: transparent;
+    outline: 1px solid $background-extra;
+    outline-offset: -1px;
+  }
+
+  &::after {
+    background-color: $background-extra;
+  }
+}
+
+.faq-accordion__item--show > button:hover,
+.faq-accordion__item--show > button:focus {
+  background-color: $background-accent;
+
+  &::before {
+    background-color: $background-accent;
+  }
+
+  &::after {
+    background-color: $background-extra;
+  }
+}
+
+.faq-accordion__item--show:active > button {
+  &::before {
+    background-color: $background-accent;
+  }
+
+  &::after {
+    background-color: $background-extra;
+  }
+}
+
+.faq-accordion .faq-accordion__item--active div,
+.faq-accordion .faq-accordion__item--active button {
+  background-color: $button-clicked;
+
+  &::before {
+    background-color: $background-extra;
+  }
+
+  &::after {
+    background-color: $background-accent;
+  }
+}
+
+.faq-accordion__item--active:active > button {
+  &::before {
+    background-color: $background-accent;
+  }
+
+  &::after {
+    background-color: $background-extra;
+  }
+}
+

@@ -1,0 +1,25 @@
+.contact__header {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12px;
+  margin: 0;
+}
+
+.contact__subtitle {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}

@@ -1,0 +1,17 @@
+.promo {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+}
+
+.promo__navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

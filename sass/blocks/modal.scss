@@ -1,0 +1,156 @@
+.modal--open {
+  position: fixed;
+  top: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  padding: 40px 15px;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  color: $main-text-color;
+  width: 290px;
+  background-color: #ffffff;
+  border-radius: 16px;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px 80px;
+    width: 510px;
+  }
+}
+
+.modal--closed {
+  display: none;
+}
+
+.modal__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  gap: 25px;
+
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    gap: 30px;
+    align-items: flex-start;
+    border-radius: 16px;
+  }
+}
+
+.modal__form-wrapper {
+  background-color: $background-accent;
+  border-radius: 16px;
+  padding: 15px 15px 27px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+
+  @media (min-width: $tablet-width) {
+    padding: 41px 40px 36px;
+    width: 442px;
+    gap: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 44px 70px 40px;
+    width: 490px;
+    gap: 40px;
+  }
+}
+
+.modal__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  @media (min-width: $tablet-width) {
+    gap: 31px;
+  }
+
+  @media (min-width: $desktop-width) {
+    gap: 34px;
+  }
+}
+
+.modal__header {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $extra-text-color;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.modal__subtitle {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+    line-height: 26px;
+  }
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  border: none;
+
+  @media (min-width: $tablet-width) {
+    width: 18px;
+    height: 18px;
+    top: 32px;
+    right: 32px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 15px;
+    background-color: $background-accent;
+    rotate: 45deg;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 15px;
+    background-color: $background-accent;
+    rotate: -45deg;
+  }
+}
+
